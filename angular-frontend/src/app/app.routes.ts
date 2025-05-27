@@ -5,7 +5,7 @@ import { LoginComponent } from './modules/pages/login/login.component';
 import { MainMenuComponent } from './modules/pages/main-menu/main-menu.component';
 
 export const routes: Routes = [
-    {path: '', component: LandingComponent}, // Cambia a LandingComponent
+    {path: 'landing', component: LandingComponent}, // Cambia a LandingComponent
     {path: 'register', component: RegisterComponent},
     {path: 'login', component: LoginComponent},
     {path: 'main-menu', component: MainMenuComponent}

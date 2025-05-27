@@ -1,14 +1,28 @@
-<div class="bg-[#001830] min-h-screen">
-    <div>
-        <p class="text-white">Correo electónico</p>
-        <input type="text" name="correo electrónico" class="bg-white text-black p-2 rounded-md w-full mb-4" />
-        
-         <p class="text-white">Contraseña</p>
-        <input type="password" name="contraseña" class="bg-white text-black p-2 rounded-md w-full mb-4" />
-        
-        <button routerLink="/main-menu" class="bg-[#004C6D] mt-5 text-white px-6 py-2 rounded hover:bg-[#326F89] transition">
-            Iniciar Sesión
-        </button>
+<div class="bg-[#001830] min-h-screen flex justify-center px-4">
+    <div class="w-full max-w-2xl mt-20 px-8">
+        <div class="flex justify-center mb-10">
+            <img src="Logo sin fondo.png" alt="Logo AquaData" class="max-w-md" />
+        </div>
+
+        <form>
+            <label class="block text-white text-lg mb-1" for="correo">Correo electrónico</label>
+            <input type="email" id="correo" name="correo" class="bg-blue-100 text-black p-3 rounded-md w-full mb-5" />
+
+            <div class="mb-4 relative">
+                <label class="block text-white text-lg mb-1" for="password">Contraseña</label>
+                <input class="bg-blue-100 text-black p-3 rounded-md w-full mb-5" type="password" id="password" name="contraseña"/>
+            </div>
+
+            <div class="flex justify-between">
+                <button [routerLink]="['/main-menu']" type="submit"
+                    class="bg-[#00A3C4] text-white px-6 py-3 rounded hover:bg-[#0092b2] transition">
+                    Iniciar Sesión
+                </button>
+                <button routerLink="/landing" type="button"
+                    class="bg-gray-500 text-white px-6 py-3 rounded hover:bg-gray-600 transition">
+                    ¿Olvidaste tu contraseña?
+                </button>
+            </div>
+        </form>
     </div>
-    
 </div>
