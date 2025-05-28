@@ -37,12 +37,15 @@ class MarineSpecies
     /**
      * @var Collection<int, User>
      */
-    #[ORM\ManyToMany(targetEntity: User::class, inversedBy: 'marineSpecies')]
-    private Collection $users;
+
 
     #[ORM\ManyToOne(inversedBy: 'marineSpecies')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Diary $diary = null;
+
+    #[ORM\ManyToOne(inversedBy: 'marineSpecies')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?User $users = null;
 
     public function __construct()
     {
@@ -158,6 +161,13 @@ class MarineSpecies
     public function setDiary(?Diary $diary): static
     {
         $this->diary = $diary;
+
+        return $this;
+    }
+
+    public function setUsers(?User $users): static
+    {
+        $this->users = $users;
 
         return $this;
     }
