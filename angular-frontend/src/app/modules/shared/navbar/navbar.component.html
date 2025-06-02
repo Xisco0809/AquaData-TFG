@@ -1,1 +1,31 @@
-<p>navbar works!</p>
+<div class="text-cyan-200 flex gap-4 items-center justify-between">
+    <div>
+        <img src="Logo sin fondo.png" alt="Logo AquaData" class="w-28 h-auto m-4">
+    </div>
+    <div>
+        <button [routerLink]="['/diary']" class="bg-[#004C6D] hover:bg-[#326F89] transition text-white p-2 rounded-lg">
+            Agenda
+        </button>
+        |
+        <button [routerLink]="['/marine-species']" class="bg-[#004C6D] hover:bg-[#326F89] transition text-white p-2 rounded-lg">
+            Especies Marinas
+        </button>
+        |
+        <button [routerLink]="['/news']"  class="bg-[#004C6D] hover:bg-[#326F89] transition text-white p-2 rounded-lg">
+            Notícias
+        </button>
+        |
+        <button [routerLink]="['/curiosities']"  class="bg-[#004C6D] hover:bg-[#326F89] transition text-white p-2 rounded-lg">
+            Curiosidades
+        </button>
+        |
+        <button [routerLink]="['/about-us']"  class="bg-[#004C6D] hover:bg-[#326F89] transition text-white p-2 rounded-lg">
+            Sobre Nosotros
+        </button>
+    </div>
+    <div>
+        <button [routerLink]="['/user']" class="bg-[#004C6D] hover:bg-[#326F89] transition text-white p-2 rounded-lg flex items-center justify-center mr-4">
+            <i class="fa-solid fa-user text-sm p-2">   Xisco0809</i>
+        </button>
+    </div>
+</div>
