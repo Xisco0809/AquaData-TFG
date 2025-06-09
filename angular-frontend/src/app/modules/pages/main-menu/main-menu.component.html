@@ -1,1 +1,99 @@
-<p>main-menu works!</p>
+<div class="bg-[#001830] min-h-screen">
+  <app-navbar></app-navbar>
+
+  <main class="flex flex-col items-center px-4 py-8">
+    <h2 class="text-white text-3xl font-bold text-center mb-4">¿Qué es AquaData?</h2>
+
+    <p class="text-white text-justify max-w-3xl">
+      AquaData es una plataforma web diseñada para aficionados y expertos en pesca del mar Mediterráneo. <br>
+      Aquí encontrarás información actualizada, herramientas prácticas y recursos educativos, todo en un mismo lugar.
+    </p>
+
+    <section class="mt-12 text-white flex flex-col items-center relative">
+
+      <button (click)="scrollCuriosidadesLeft()"
+        class="hidden md:block absolute left-4 top-[calc(50%-40px)] z-20 bg-black/70 text-white p-3 rounded-full hover:bg-[#6897c4] transition-all duration-300 hover:scale-110">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white"
+          stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12l14 0" />
+          <path d="M5 12l6 6" />
+          <path d="M5 12l6 -6" />
+        </svg>
+      </button>
+
+      <div #curiosidadesCarousel class="overflow-x-hidden scroll-smooth flex gap-6 pb-4 scrollbar-hide w-full max-w-2xl">
+        <div class="flex-none flex flex-col items-center text-justify w-full"> <h3 class="text-2xl font-bold mb-4 text-center px-4 max-w-xl mx-auto">¿Sabías que...?</h3> <img src="Curiosidades/Sargo.webp" alt="Sargo" class="w-64 h-auto mb-4" />
+          <p class="px-4 max-w-xl mx-auto"> El Sargo es hermafrodita. Aunque hay ejemplares que se mantienen toda la vida en el mismo sexo,
+            habitualmente empiezan siendo machos y se transforman en hembra.
+          </p>
+        </div>
+
+        <div class="flex-none flex flex-col items-center text-justify w-full"> <h3 class="text-2xl font-bold mb-4 text-center px-4 max-w-xl mx-auto">¿Sabías que...?</h3> <img src="Curiosidades/Atun.webp" alt="Atún" class="w-64 h-auto mb-4" />
+          <p class="px-4 max-w-xl mx-auto"> El atún rojo es uno de los peces más rápidos del océano, alcanzando velocidades de hasta 75 km/h.
+            Su carne es muy valorada en la gastronomía, especialmente en la cocina japonesa.
+          </p>
+        </div>
+      </div>
+
+      <button (click)="scrollCuriosidadesRight()"
+        class="hidden md:block absolute right-4 top-[calc(50%-40px)] z-20 bg-black/70 text-white p-3 rounded-full  hover:bg-[#6897c4] transition-all duration-300 hover:scale-110">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white"
+          stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12l14 0" />
+          <path d="M13 18l6 -6" />
+          <path d="M13 6l6 6" />
+        </svg>
+      </button>
+
+    </section>
+
+    <section class="mt-12 text-white flex flex-col items-center relative">
+
+      <button (click)="scrollNoticiasLeft()"
+        class="hidden md:block absolute left-4 top-[calc(50%-40px)] z-20 bg-black/70 text-white p-3 rounded-full hover:bg-[#6897c4] transition-all duration-300 hover:scale-110">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white"
+          stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12l14 0" />
+          <path d="M5 12l6 6" />
+          <path d="M5 12l6 -6" />
+        </svg>
+      </button>
+
+      <div #noticiasCarousel class="overflow-x-hidden scroll-smooth flex gap-6 pb-4 scrollbar-hide w-full max-w-2xl">
+        <div class="flex-none flex flex-col items-center text-justify w-full"> <h3 class="text-2xl font-bold mb-4 text-center px-4 max-w-xl mx-auto">Últimas Noticias</h3>
+          <h4 class="flex flex-col items-center font-bold text-justify px-4 max-w-xl mx-auto">Pescan accidentalmente un tiburón peregrino de siete metros
+            en Port de la Selva (Girona)</h4>
+          <img src="News/Tiburon peregrino.avif" alt="Noticias" class="w-64 h-auto mb-4" />
+          <p class="px-4 max-w-xl mx-auto">
+            Un grupo de pescadores ha capturado accidentalmente un tiburón peregrino de siete metros en Port de la
+            Selva,
+            Girona. Este ejemplar, conocido por ser el segundo pez más grande del mundo, fue liberado tras su captura.
+          </p>
+        </div>
+
+        <div class="flex-none flex flex-col items-center text-justify w-full"> <h3 class="text-2xl font-bold mb-4 text-center px-4 max-w-xl mx-auto">Últimas Noticias</h3>
+          <h4 class="flex flex-col items-center font-bold text-justify px-4 max-w-xl mx-auto">España ampliará sus reservas marinas y
+            protegerá la enorme ‘guardería’ de cachalotes al norte de Menorca</h4>
+          <img src="News/Cachalotes.avif" alt="Noticias" class="w-64 h-auto mb-4" />
+          <p class="px-4 max-w-xl mx-auto">
+            El Gobierno español ha anunciado la ampliación de sus reservas marinas para proteger la biodiversidad del
+            Mediterráneo.
+            Esta medida incluye la protección de una importante zona de cría y alimentación de cachalotes al norte de
+            Menorca.
+          </p>
+        </div>
+      </div>
+
+      <button (click)="scrollNoticiasRight()"
+        class="hidden md:block absolute right-4 top-[calc(50%-40px)] z-20 bg-black/70 text-white p-3 rounded-full  hover:bg-[#6897c4] transition-all duration-300 hover:scale-110">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white"
+          stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12l14 0" />
+          <path d="M13 18l6 -6" />
+          <path d="M13 6l6 6" />
+        </svg>
+      </button>
+
+    </section>
+  </main>
+</div>
