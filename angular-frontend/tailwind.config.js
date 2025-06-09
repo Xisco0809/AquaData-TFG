@@ -8,10 +8,11 @@ module.exports = {
       colors: {
         primary: '#1D4ED8',    // Azul personalizado
         secondary: '#9333EA',  // Morado personalizado
-        accent: '#F59E0B',     // Amarillo acento
+        accent: '#F59E0B',   // Amarillo acento
+        black: '#000000'    // Negro personalizado
       },
       fontFamily: {
-        sans: ['Poppins', 'sans-serif'], // Fuente predeterminada
+        sans: ['JetBrains Mono', 'sans-serif'], // Fuente predeterminada
       },
     },
   },
