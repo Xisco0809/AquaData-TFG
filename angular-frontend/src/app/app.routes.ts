@@ -9,6 +9,7 @@ import { NewsComponent } from './modules/pages/news/news.component';
 import { CuriositiesComponent } from './modules/pages/curiosities/curiosities.component';
 import { AboutUsComponent } from './modules/pages/about-us/about-us.component';
 import { UserComponent } from './modules/pages/user/user.component';
+import { FooterComponent } from './modules/shared/footer/footer.component';
 
 export const routes: Routes = [
     {path: '', component: LandingComponent}, // Cambia a LandingComponent
@@ -20,5 +21,6 @@ export const routes: Routes = [
     {path: 'news', component: NewsComponent},
     {path: 'curiosities', component: CuriositiesComponent},
     {path: 'about-us', component: AboutUsComponent},
-    {path: 'user', component: UserComponent}
+    {path: 'user', component: UserComponent},
+    {path: 'footer', component: FooterComponent}
 ];
