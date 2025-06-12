@@ -6,7 +6,7 @@ import { FooterComponent } from '../../shared/footer/footer.component';
   selector: 'app-news',
   imports: [NavbarComponent, FooterComponent],
   templateUrl: './news.component.html',
-  styleUrl: './news.component.css'
+
 })
 export class NewsComponent {
 
