@@ -4,7 +4,7 @@ import { RegisterComponent } from './modules/pages/register/register.component';
 import { LoginComponent } from './modules/pages/login/login.component';
 import { MainMenuComponent } from './modules/pages/main-menu/main-menu.component';
 import { DiaryComponent } from './modules/pages/diary/diary.component';
-import{MarineSpeciesComponent} from './modules/pages/marine-species/marine-species.component';
+import { MarineSpeciesComponent } from './modules/pages/marine-species/marine-species.component';
 import { NewsComponent } from './modules/pages/news/news.component';
 import { CuriositiesComponent } from './modules/pages/curiosities/curiosities.component';
 import { AboutUsComponent } from './modules/pages/about-us/about-us.component';

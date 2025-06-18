@@ -1,1 +1,32 @@
-<p>marine-species works!</p>
+<div class="bg-[#d2e8ff] min-h-screen">
+  <app-navbar></app-navbar>
+
+  <main class="flex flex-col items-center px-4 py-8">
+    <h2 class="text-black text-3xl font-bold text-center mb-6">Catálogo de Especies Marinas</h2>
+
+    <p class="text-black text-justify max-w-4xl mb-10">
+      Explora la diversidad de especies marinas que habitan el mar Mediterráneo. Aquí encontrarás información detallada sobre sus características, hábitats y estado de conservación.
+    </p>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 w-full max-w-7xl">
+      <ng-container *ngFor="let especie of especies; let i = index">
+        <div class="bg-white rounded-xl p-6 shadow-lg flex flex-col items-center w-full max-w-md mx-auto">
+          <h3 style="white-space: pre-line;" class="font-bold text-xl text-center mb-4">
+            {{ especie.nombre }}
+          </h3>
+          <img [src]="especie.imagen" [alt]="especie.alt" class="w-full h-64 object-cover rounded-lg mb-4" />
+          <p class="text-justify text-sm text-gray-700" [class.hidden]="!showDetails[i]">
+            {{ especie.descripcion }}
+          </p>
+          <button
+            (click)="toggleDetails(i)"
+            class="mt-2 px-4 py-2 text-[#004C6D] rounded hover:text-[#326F89] hover:underline text-lg font-bold">
+            {{ showDetails[i] ? '×' : 'Ver más...' }}
+          </button>
+        </div>
+      </ng-container>
+    </div>
+  </main>
+
+  <app-footer></app-footer>
+</div>
