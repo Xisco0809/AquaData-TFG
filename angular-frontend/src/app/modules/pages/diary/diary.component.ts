@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
+import { NavbarComponent } from '../../shared/navbar/navbar.component';
+import { FooterComponent } from '../../shared/footer/footer.component';
 
 @Component({
   selector: 'app-diary',
-  imports: [],
+  imports: [NavbarComponent, FooterComponent],
   templateUrl: './diary.component.html',
-  styleUrl: './diary.component.css'
+  
 })
 export class DiaryComponent {
 
