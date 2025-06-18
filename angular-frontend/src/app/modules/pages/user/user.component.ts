@@ -20,7 +20,6 @@ export class UserComponent {
 
   // Datos del formulario (simulados inicialmente)
   editName: string = this.userName;
-  editEmail: string = 'xisco@email.com';
   editPassword: string = '';
 
   // Abrir modal
@@ -39,7 +38,6 @@ export class UserComponent {
     this.closeModal();
     console.log('Cambios guardados:', {
       nombre: this.editName,
-      correo: this.editEmail,
       contraseña: this.editPassword
     });
   }
