@@ -3,8 +3,6 @@
 namespace App\Entity;
 
 use App\Repository\MarineSpeciesRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -34,23 +32,13 @@ class MarineSpecies
     #[ORM\Column(length: 50)]
     private ?string $category = null;
 
-    /**
-     * @var Collection<int, User>
-     */
-
-
     #[ORM\ManyToOne(inversedBy: 'marineSpecies')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Diary $diary = null;
 
     #[ORM\ManyToOne(inversedBy: 'marineSpecies')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?User $users = null;
-
-    public function __construct()
-    {
-        $this->users = new ArrayCollection();
-    }
+    private ?User $user = null;
 
     public function getId(): ?int
     {
@@ -65,7 +53,6 @@ class MarineSpecies
     public function setName(string $name): static
     {
         $this->name = $name;
-
         return $this;
     }
 
@@ -77,7 +64,6 @@ class MarineSpecies
     public function setImage(string $image): static
     {
         $this->image = $image;
-
         return $this;
     }
 
@@ -89,7 +75,6 @@ class MarineSpecies
     public function setAvarageWeight(float $avarage_weight): static
     {
         $this->avarage_weight = $avarage_weight;
-
         return $this;
     }
 
@@ -101,7 +86,6 @@ class MarineSpecies
     public function setMeasurements(string $measurements): static
     {
         $this->measurements = $measurements;
-
         return $this;
     }
 
@@ -113,7 +97,6 @@ class MarineSpecies
     public function setDescription(string $description): static
     {
         $this->description = $description;
-
         return $this;
     }
 
@@ -125,31 +108,6 @@ class MarineSpecies
     public function setCategory(string $category): static
     {
         $this->category = $category;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, User>
-     */
-    public function getUsers(): Collection
-    {
-        return $this->users;
-    }
-
-    public function addUser(User $user): static
-    {
-        if (!$this->users->contains($user)) {
-            $this->users->add($user);
-        }
-
-        return $this;
-    }
-
-    public function removeUser(User $user): static
-    {
-        $this->users->removeElement($user);
-
         return $this;
     }
 
@@ -161,14 +119,17 @@ class MarineSpecies
     public function setDiary(?Diary $diary): static
     {
         $this->diary = $diary;
-
         return $this;
     }
 
-    public function setUsers(?User $users): static
+    public function getUser(): ?User
     {
-        $this->users = $users;
+        return $this->user;
+    }
 
+    public function setUser(?User $user): static
+    {
+        $this->user = $user;
         return $this;
     }
 }
