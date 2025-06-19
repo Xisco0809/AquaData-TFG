@@ -12,7 +12,7 @@ module.exports = {
         black: '#000000'    // Negro personalizado
       },
       fontFamily: {
-        sans: ['JetBrains Mono', 'sans-serif'], // Fuente predeterminada
+        sans: ['Arial', 'sans-serif'], // Fuente predeterminada
       },
     },
   },

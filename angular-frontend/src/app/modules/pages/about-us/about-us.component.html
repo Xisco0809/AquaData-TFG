@@ -1,1 +1,43 @@
-<p>about-us works!</p>
+<div class="bg-[#d2e8ff] min-h-screen flex flex-col">
+    <app-navbar></app-navbar>
+
+    <main class="flex-grow p-6">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- Tarjeta de bienvenida -->
+            <div class="lg:col-span-3 bg-white rounded-2xl shadow-md p-6">
+                <h1 class="text-2xl font-bold mb-2">Acerca de AquaData</h1>
+                <p class="text-gray-700">
+                    AquaData es una plataforma dedicada a la conservación marina, donde puedes registrar tus capturas,
+                    consultar noticias y participar en actividades relacionadas con el medio ambiente.
+                </p>
+            </div>
+
+            <!-- Misión -->
+            <div class="bg-white rounded-2xl shadow-md p-4 flex flex-col items-center text-center">
+                <h2 class="font-semibold text-lg mb-2">Nuestra Misión</h2>
+                <p class="text-gray-600 mb-4">
+                    Promover la sostenibilidad y la conservación de los océanos a través de la educación y la
+                    participación comunitaria.
+                </p>
+            </div>
+
+            <!-- Visión -->
+            <div class="bg-white rounded-2xl shadow-md p-4 flex flex-col items-center text-center">
+                <h2 class="font-semibold text-lg mb-2">Nuestra Visión</h2>
+                <p class="text-gray-600 mb-4">
+                    Ser un referente en la protección del medio marino, inspirando a las personas a cuidar nuestros océanos.
+                </p>
+            </div>
+
+            <!-- Valores -->
+            <div class="bg-white rounded-2xl shadow-md p-4 flex flex-col items-center text-center">
+                <h2 class="font-semibold text-lg mb-2">Nuestros Valores</h2>
+                <p class="text-gray-600 mb-4">
+                    Compromiso, Innovación, Colaboración y Respeto por el medio ambiente.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <app-footer></app-footer>
+</div>
