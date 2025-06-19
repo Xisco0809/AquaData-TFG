@@ -29,7 +29,7 @@ class MarineSpeciesAdminController extends AbstractController
         return $this->json($species, Response::HTTP_OK, [], ['groups' => 'marine:read']);
     }
 
-    #[Route('/', name: 'marine_species_create', methods: ['POST'])]
+    #[Route('', name: 'marine_species_create', methods: ['POST'])]
     public function create(Request $request, EntityManagerInterface $em): JsonResponse
     {
         $data = json_decode($request->getContent(), true);

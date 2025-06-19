@@ -55,26 +55,6 @@ class UserAdminController extends AbstractController
         ]);
     }
 
-    #[Route('', methods: ['POST'])]
-    public function createUser(Request $request): JsonResponse
-    {
-        $data = json_decode($request->getContent(), true);
-
-        if (!isset($data['name'], $data['email'], $data['password'])) {
-            return $this->json(['message' => 'Missing required fields'], 400);
-        }
-
-        $user = new User();
-        $user->setName($data['name']);
-        $user->setEmail($data['email']);
-        $user->setPassword($data['password']); // encriptar la contraseña
-        $user->setRole('ROLE_USER');
-
-        $this->em->persist($user);
-        $this->em->flush();
-
-        return $this->json(['message' => 'User created', 'id' => $user->getId()], 201);
-    }
 
     #[Route('/{id}', methods: ['PUT'])]
     public function updateUser(Request $request, int $id): JsonResponse

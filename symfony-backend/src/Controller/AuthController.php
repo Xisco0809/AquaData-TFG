@@ -1,18 +1,20 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Api;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\Routing\Annotation\Route;
 
-final class AuthController extends AbstractController
+class AuthController extends AbstractController
 {
-    #[Route('/auth', name: 'app_auth')]
-    public function index(): Response
+    #[Route('/api/login', name: 'api_login', methods: ['POST'])]
+    public function login(): JsonResponse
     {
-        return $this->render('auth/index.html.twig', [
-            'controller_name' => 'AuthController',
-        ]);
+        // Este método será interceptado por LexikJWTAuthenticationBundle.
+        // Si llegas aquí, es porque algo salió mal.
+        return $this->json([
+            'message' => 'Este endpoint debe ser manejado por el JWT authenticator.'
+        ], 401);
     }
 }
