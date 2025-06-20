@@ -29,22 +29,23 @@ class User
     private ?string $role = null;
 
     /**
-     * @var Collection<int, MarineSpecies>
-     */
-    #[ORM\ManyToMany(targetEntity: MarineSpecies::class, mappedBy: 'users')]
-    private Collection $marineSpecies;
-
-    /**
      * @var Collection<int, Curiosities>
      */
-    #[ORM\ManyToMany(targetEntity: Curiosities::class, mappedBy: 'users')]
+    #[ORM\OneToMany(targetEntity: Curiosities::class, mappedBy: 'users')]
     private Collection $curiosities;
 
     /**
      * @var Collection<int, News>
      */
-    #[ORM\ManyToMany(targetEntity: News::class, mappedBy: 'users')]
+    #[ORM\OneToMany(targetEntity: News::class, mappedBy: 'users')]
     private Collection $news;
+
+    /**
+     * @var Collection<int, MarineSpecies>
+     */
+    #[ORM\OneToMany(targetEntity: MarineSpecies::class, mappedBy: 'users')]
+    private Collection $marineSpecies;
+
 
     public function __construct()
     {

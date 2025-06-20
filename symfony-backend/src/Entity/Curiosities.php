@@ -25,11 +25,14 @@ class Curiosities
     #[ORM\Column(length: 50)]
     private ?string $category = null;
 
+    #[ORM\ManyToOne(inversedBy: 'curiosities')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?User $users = null;
+
     /**
      * @var Collection<int, User>
      */
-    #[ORM\ManyToMany(targetEntity: User::class, inversedBy: 'curiosities')]
-    private Collection $users;
+  
 
     public function __construct()
     {
@@ -97,6 +100,13 @@ class Curiosities
     public function removeUser(User $user): static
     {
         $this->users->removeElement($user);
+
+        return $this;
+    }
+
+    public function setUsers(?User $users): static
+    {
+        $this->users = $users;
 
         return $this;
     }

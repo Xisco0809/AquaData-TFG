@@ -22,11 +22,14 @@ class News
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
+    #[ORM\ManyToOne(inversedBy: 'news')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?User $users = null;
+
     /**
      * @var Collection<int, User>
      */
-    #[ORM\ManyToMany(targetEntity: User::class, inversedBy: 'news')]
-    private Collection $users;
+    
 
     public function __construct()
     {
@@ -82,6 +85,13 @@ class News
     public function removeUser(User $user): static
     {
         $this->users->removeElement($user);
+
+        return $this;
+    }
+
+    public function setUsers(?User $users): static
+    {
+        $this->users = $users;
 
         return $this;
     }

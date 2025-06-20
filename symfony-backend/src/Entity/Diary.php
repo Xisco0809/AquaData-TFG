@@ -28,14 +28,17 @@ class Diary
     #[ORM\Column(type: Types::TEXT)]
     private ?string $notes = null;
 
-    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
-    private ?User $users = null;
+
 
     /**
      * @var Collection<int, MarineSpecies>
      */
     #[ORM\OneToMany(targetEntity: MarineSpecies::class, mappedBy: 'diary')]
     private Collection $marineSpecies;
+
+    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?User $users = null;
 
     public function __construct()
     {
