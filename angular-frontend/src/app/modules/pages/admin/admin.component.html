@@ -1,0 +1,36 @@
+<div class="bg-[#d2e8ff] min-h-screen flex flex-col">
+  <app-navbar></app-navbar>
+
+  <main class="flex-grow p-6">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <!-- Bienvenida -->
+      <div class="lg:col-span-3 bg-white rounded-2xl shadow-md p-6">
+        <h1 class="text-2xl font-bold mb-2">Panel de Administración</h1>
+        <p class="text-gray-700">Gestiona contenido clave de AquaData: especies, curiosidades y noticias.</p>
+      </div>
+
+      <!-- Especies Marinas -->
+      <div class="bg-white rounded-2xl shadow-md p-4 flex flex-col items-center text-center">
+        <h2 class="font-semibold text-lg mb-2">Especies Marinas</h2>
+        <p class="text-gray-600 mb-4">Añade, edita o elimina especies del catálogo.</p>
+        <button [routerLink]="['/admin/species']" class="bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700">Administrar</button>
+      </div>
+
+      <!-- Curiosidades -->
+      <div class="bg-white rounded-2xl shadow-md p-4 flex flex-col items-center text-center">
+        <h2 class="font-semibold text-lg mb-2">Curiosidades</h2>
+        <p class="text-gray-600 mb-4">Gestiona curiosidades sobre el mar Mediterráneo.</p>
+        <button [routerLink]="['/admin/facts']" class="bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700">Administrar</button>
+      </div>
+
+      <!-- Noticias -->
+      <div class="bg-white rounded-2xl shadow-md p-4 flex flex-col items-center text-center">
+        <h2 class="font-semibold text-lg mb-2">Noticias</h2>
+        <p class="text-gray-600 mb-4">Publica y administra noticias recientes.</p>
+        <button [routerLink]="['/admin/news']" class="bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700">Administrar</button>
+      </div>
+    </div>
+  </main>
+
+  <app-footer></app-footer>
+</div>

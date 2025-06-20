@@ -1,59 +1,94 @@
-# AngularFrontend
+# AquaData
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.3.
+AquaData es una plataforma web dedicada a la pesca y la conservación marina en el mar Mediterráneo. Permite a usuarios aficionados y expertos consultar información sobre especies marinas, registrar capturas, leer noticias y curiosidades, y participar en la protección del medio ambiente.
 
-## Development server
+## Tecnologías utilizadas
 
-To start a local development server, run:
+- **Frontend:** [Angular](https://angular.io/) + [Tailwind CSS](https://tailwindcss.com/)
+- **Backend:** [Symfony](https://symfony.com/) (PHP)
+- **Base de datos:** PostgreSQL (configurable)
+- **Otros:** FontAwesome, Google Fonts
 
-```bash
-ng serve
+## Estructura del proyecto
+
+```
+/angular-frontend      # Aplicación Angular (SPA)
+  └── src/app
+      └── modules
+          ├── pages   # Páginas principales (login, registro, menú, etc.)
+          └── shared  # Componentes compartidos (navbar, footer)
+/symfony-backend       # API y lógica de negocio Symfony
+  └── migrations       # Migraciones de base de datos
+  └── templates        # Plantillas Twig (si aplica)
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Funcionalidades principales
 
-## Code scaffolding
+- **Registro e inicio de sesión de usuarios**
+- **Catálogo de especies marinas** del Mediterráneo
+- **Noticias** y **curiosidades** sobre el mundo marino
+- **Agenda personal** para registrar capturas diarias
+- **Perfil de usuario** editable
+- **Panel de administración** (en desarrollo)
+- **Diseño responsive** y moderno con Tailwind CSS
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Instalación
 
-```bash
-ng generate component component-name
-```
+### Frontend (Angular)
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+1. Ve al directorio del frontend:
+   ```bash
+   cd angular-frontend
+   ```
+2. Instala dependencias:
+   ```bash
+   npm install
+   ```
+3. Inicia el servidor de desarrollo:
+   ```bash
+   npm start
+   ```
+   La app estará disponible en `http://localhost:4080`.
 
-```bash
-ng generate --help
-```
+### Backend (Symfony)
 
-## Building
+1. Ve al directorio del backend:
+   ```bash
+   cd symfony-backend
+   ```
+2. Instala dependencias:
+   ```bash
+   composer install
+   ```
+3. Configura la base de datos en `.env` o `.env.local`.
+4. Ejecuta las migraciones:
+   ```bash
+   php bin/console doctrine:migrations:migrate
+   ```
+5. Inicia el servidor de desarrollo:
+   ```bash
+   symfony server:start
+   ```
+   La API estará disponible en `http://localhost:8080`.
 
-To build the project run:
+## Scripts útiles
 
-```bash
-ng build
-```
+- **Angular:**  
+  - `npm run build` — Compila la app para producción
+  - `npm run test` — Ejecuta los tests unitarios
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- **Symfony:**  
+  - `php bin/console server:run` — Inicia el servidor
+  - `php bin/phpunit` — Ejecuta los tests
 
-## Running unit tests
+## Créditos
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+- Desarrollado por el equipo de AquaData
+- Hecho con ❤️ para la conservación marina
 
-```bash
-ng test
-```
+## Licencia
 
-## Running end-to-end tests
+Este proyecto está bajo la licencia MIT.
 
-For end-to-end (e2e) testing, run:
+---
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
