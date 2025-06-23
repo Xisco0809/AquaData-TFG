@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../Service/auth.service';
-import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
@@ -23,7 +22,7 @@ export class LoginComponent {
       .subscribe({
         next: (res) => {
           // Puedes guardar el usuario en localStorage si lo deseas
-          this.router.navigate(['/']);
+          this.router.navigate(['/main-menu']);
         },
         error: (err) => {
           this.error = err.error.error || 'Error en el login';

@@ -4,27 +4,22 @@
   <main class="flex-grow flex flex-col items-center px-4 py-8">
     <h2 class="text-black text-3xl font-bold text-center mb-4">¿Qué es AquaData?</h2>
 
-    <p class="text-black text-justify max-w-3xl">
+    <p class="text-black text-justify max-w-3xl mb-12">
       AquaData es una plataforma web diseñada para aficionados y expertos en pesca del mar Mediterráneo. <br>
       Aquí encontrarás información actualizada, herramientas prácticas y recursos educativos, todo en un mismo lugar.
     </p>
 
-    <!-- Carruseles en dos columnas -->
-    <div class="mt-12 flex flex-col md:flex-row justify-center gap-8 w-full max-w-7xl">
-
-      <!-- Tarjeta: ¿Sabías que...? -->
-      <section class="relative w-full md:w-1/2">
-        <!-- Botón izquierdo -->
+    <div class="w-full max-w-5xl mb-12">
+      <section class="relative w-full">
         <button (click)="scrollCuriosidadesLeft()"
-          class="hidden md:block absolute left-2 top-[calc(50%-40px)] z-20 bg-black/70 p-3 rounded-full hover:bg-[#6897c4] transition-all duration-300 hover:scale-110">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="white" stroke-width="1">
+          class="hidden md:block absolute left-2 top-[calc(50%-40px)] z-20 p-2 transition-all duration-300 hover:scale-125">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="#001830" stroke-width="1">
             <path d="M5 12l14 0" />
             <path d="M5 12l6 6" />
             <path d="M5 12l6 -6" />
           </svg>
         </button>
 
-        <!-- Tarjeta blanca -->
         <div class="bg-white rounded-2xl shadow-lg p-6 h-full">
           <div #curiosidadesCarousel class="overflow-x-hidden scroll-smooth flex gap-6 pb-4 scrollbar-hide w-full">
             <div class="flex-none flex flex-col items-center text-center w-full">
@@ -35,27 +30,40 @@
                 habitualmente empiezan siendo machos y se transforman en hembra.
               </p>
             </div>
-            <!-- Slide adicional si tienes más -->
-          </div>
+            <div class="flex-none flex flex-col items-center text-center w-full">
+              <h3 class="text-2xl font-bold mb-4">Curiosidad Marina</h3>
+              <img src="https://via.placeholder.com/256x192?text=Curiosidad+2" alt="Curiosidad 2" class="w-64 h-auto mb-4" />
+              <p class="px-4 max-w-xl">
+                Los caballitos de mar son los únicos peces en los que el macho lleva los huevos en una bolsa de cría hasta que eclosionan.
+              </p>
+            </div>
+            <div class="flex-none flex flex-col items-center text-center w-full">
+              <h3 class="text-2xl font-bold mb-4">Dato Interesante</h3>
+              <img src="https://via.placeholder.com/256x192?text=Curiosidad+3" alt="Curiosidad 3" class="w-64 h-auto mb-4" />
+              <p class="px-4 max-w-xl">
+                El pulpo tiene tres corazones: dos bombean sangre a las branquias y uno la distribuye al resto del cuerpo.
+              </p>
+            </div>
+            </div>
+             <button [routerLink]="['/curiosities']" class="mt-4 text-[#004C6D] hover:underline text-lg font-bold">Ver todas las Curiosidades</button>
         </div>
 
-        <!-- Botón derecho -->
         <button (click)="scrollCuriosidadesRight()"
-          class="hidden md:block absolute right-2 top-[calc(50%-40px)] z-20 bg-black/70 p-3 rounded-full hover:bg-[#6897c4] transition-all duration-300 hover:scale-110">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="white" stroke-width="1">
+          class="hidden md:block absolute right-2 top-[calc(50%-40px)] z-20 p-2 transition-all duration-300 hover:scale-125">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="#001830" stroke-width="1">
             <path d="M5 12l14 0" />
             <path d="M13 18l6 -6" />
             <path d="M13 6l6 6" />
           </svg>
         </button>
       </section>
+    </div>
 
-      <!-- Tarjeta: Últimas Noticias -->
-      <section class="relative w-full md:w-1/2">
-        <!-- Botón izquierdo -->
+    <div class="w-full max-w-5xl mb-12">
+      <section class="relative w-full">
         <button (click)="scrollNoticiasLeft()"
-          class="hidden md:block absolute left-2 top-[calc(50%-40px)] z-20 bg-black/70 p-3 rounded-full hover:bg-[#6897c4] transition-all duration-300 hover:scale-110">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="white" stroke-width="1">
+          class="hidden md:block absolute left-2 top-[calc(50%-40px)] z-20 p-2 transition-all duration-300 hover:scale-125">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="#001830" stroke-width="1">
             <path d="M5 12l14 0" />
             <path d="M5 12l6 6" />
             <path d="M5 12l6 -6" />
@@ -75,14 +83,33 @@
                 Selva. Este ejemplar, conocido por ser el segundo pez más grande del mundo, fue liberado tras su captura.
               </p>
             </div>
-            <!-- Slide adicional si tienes más -->
-          </div>
+            <div class="flex-none flex flex-col items-center text-center w-full">
+              <h3 class="text-2xl font-bold mb-4">Noticia Destacada</h3>
+              <h4 class="font-bold px-4 max-w-xl">
+                Campaña de limpieza en las costas del Mediterráneo recolecta toneladas de plástico
+              </h4>
+              <img src="https://via.placeholder.com/256x192?text=Noticia+2" alt="Noticia 2" class="w-64 h-auto mb-4" />
+              <p class="px-4 max-w-xl">
+                Organizaciones locales e internacionales se unen para combatir la contaminación marina con éxito en varias playas.
+              </p>
+            </div>
+            <div class="flex-none flex flex-col items-center text-center w-full">
+              <h3 class="text-2xl font-bold mb-4">Aviso Importante</h3>
+              <h4 class="font-bold px-4 max-w-xl">
+                Nuevas regulaciones de pesca sostenible para el atún rojo entran en vigor
+              </h4>
+              <img src="https://via.placeholder.com/256x192?text=Noticia+3" alt="Noticia 3" class="w-64 h-auto mb-4" />
+              <p class="px-4 max-w-xl">
+                Medidas para proteger las poblaciones de atún rojo implementadas para asegurar su recuperación.
+              </p>
+            </div>
+            </div>
+            <button [routerLink]="['/news']" class="mt-4 text-[#004C6D] hover:underline text-lg font-bold">Ver todas las Noticias</button>
         </div>
 
-        <!-- Botón derecho -->
         <button (click)="scrollNoticiasRight()"
-          class="hidden md:block absolute right-2 top-[calc(50%-40px)] z-20 bg-black/70 p-3 rounded-full hover:bg-[#6897c4] transition-all duration-300 hover:scale-110">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="white" stroke-width="1">
+          class="hidden md:block absolute right-2 top-[calc(50%-40px)] z-20 p-2 transition-all duration-300 hover:scale-125">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="#001830" stroke-width="1">
             <path d="M5 12l14 0" />
             <path d="M13 18l6 -6" />
             <path d="M13 6l6 6" />
@@ -90,6 +117,42 @@
         </button>
       </section>
     </div>
+
+    <div class="w-full max-w-5xl mb-12">
+      <div class="bg-white rounded-2xl shadow-lg p-6">
+        <h2 class="text-2xl font-bold mb-4 text-center">Especie Destacada del Mes: El Pez Gallo (Zeus faber)</h2>
+        <div class="flex flex-col md:flex-row items-center gap-6">
+          <img src="Especies marinas/pez gallo.webp" alt="Pez Gallo" class="w-full md:w-1/2 lg:w-1/3 object-cover rounded-lg shadow-sm">
+          <div class="flex-1">
+            <p class="text-gray-700 text-justify mb-3">
+              El Pez Gallo (Zeus faber), también conocido como San Pedro, es una especie marina de cuerpo plano y ovalado, famoso por la mancha oscura distintiva en cada uno de sus flancos, la cual se dice representa la huella del pulgar de San Pedro. Habita en aguas profundas y se alimenta de peces más pequeños y crustáceos. Es muy valorado en la gastronomía mediterránea.
+            </p>
+            <p class="text-gray-700 text-justify">
+              Su singular apariencia y su capacidad para camuflarse lo convierten en una criatura fascinante de nuestros mares.
+            </p>
+            <button [routerLink]="['/species/pez-gallo']" class="mt-4 bg-[#326F89] text-white px-5 py-2 rounded-lg hover:bg-[#6897c4] transition-colors duration-300">Conoce más sobre el Pez Gallo</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full max-w-5xl mb-12">
+      <div class="bg-white rounded-2xl shadow-lg p-6 text-center">
+        <h2 class="text-2xl font-bold mb-4">Explora más en AquaData</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <a [routerLink]="['/species-marines']" class="bg-gray-100 hover:bg-gray-200 text-[#001830] font-semibold py-3 px-4 rounded-lg transition-colors duration-300">
+            Catálogo de Especies
+          </a>
+          <a [routerLink]="['/diary']" class="bg-gray-100 hover:bg-gray-200 text-[#001830] font-semibold py-3 px-4 rounded-lg transition-colors duration-300">
+            Mi Agenda de Capturas
+          </a>
+          <a [routerLink]="['/about-us']" class="bg-gray-100 hover:bg-gray-200 text-[#001830] font-semibold py-3 px-4 rounded-lg transition-colors duration-300">
+            Sobre Nosotros
+          </a>
+        </div>
+      </div>
+    </div>
+
   </main>
 
   <app-footer></app-footer>

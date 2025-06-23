@@ -3,41 +3,101 @@
 
   <main class="flex-grow p-6">
     <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
-      <!-- Tarjeta de bienvenida -->
       <div class="lg:col-span-3 bg-white rounded-2xl shadow-md p-6">
         <h1 class="text-2xl font-bold mb-2">¡Bienvenido de nuevo, {{ userName }}!</h1>
         <p class="text-gray-700">Consulta tu actividad reciente o accede rápidamente a las herramientas de AquaData.</p>
       </div>
 
-      <!-- Tarjetas -->
       <div class="bg-white rounded-2xl shadow-md p-4 flex flex-col items-center text-center">
         <h2 class="font-semibold text-lg mb-2">Mi Agenda</h2>
         <p class="text-gray-600 mb-4">Consulta y registra tus capturas diarias.</p>
-        <button [routerLink]="['/diary']" class="bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700">Ir a Agenda</button>
+        <button [routerLink]="['/diary']" class="bg-[#326F89] text-white px-4 py-2 rounded-xl hover:bg-[#6897c4] transition-colors duration-300">Ir a Agenda</button>
       </div>
 
       <div class="bg-white rounded-2xl shadow-md p-4 flex flex-col items-center text-center">
         <h2  class="font-semibold text-lg mb-2">Últimas Noticias</h2>
         <p class="text-gray-600 mb-4">Mantente informado sobre conservación marina.</p>
-        <button [routerLink]="['/news']" class="bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700">Ver Noticias</button>
+        <button [routerLink]="['/news']" class="bg-[#326F89] text-white px-4 py-2 rounded-xl hover:bg-[#6897c4] transition-colors duration-300">Ver Noticias</button>
       </div>
 
-      <!-- Botón que abre el modal -->
       <div class="bg-white rounded-2xl shadow-md p-4 flex flex-col items-center text-center">
         <h2 class="font-semibold text-lg mb-2">Mi Perfil</h2>
         <p class="text-gray-600 mb-4">Edita tu información personal y ajustes.</p>
-        <button (click)="openModal()" class="bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700">Ver Perfil</button>
+        <button (click)="openModal()" class="bg-[#326F89] text-white px-4 py-2 rounded-xl hover:bg-[#6897c4] transition-colors duration-300">Ver Perfil</button>
       </div>
+
+      <div class="lg:col-span-2 bg-white rounded-2xl shadow-md p-6">
+        <h2 class="text-xl font-bold mb-4">Tu Actividad Reciente</h2>
+        <div class="space-y-4">
+          <div class="flex items-center gap-4 p-3 bg-gray-50 rounded-lg">
+            <div>
+              <p class="font-semibold text-gray-800">Captura registrada: Lubina</p>
+              <p class="text-sm text-gray-600">El 20 de Junio de 2025 en Cala Estreta</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 p-3 bg-gray-50 rounded-lg">
+            <div>
+              <p class="font-semibold text-gray-800">Captura registrada: Calamar</p>
+              <p class="text-sm text-gray-600">El 18 de Junio de 2025 en Puerto de Sant Feliu</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 p-3 bg-gray-50 rounded-lg">
+            <div>
+              <p class="font-semibold text-gray-800">Especie consultada: Atún Rojo</p>
+              <p class="text-sm text-gray-600">El 15 de Junio de 2025</p>
+            </div>
+          </div>
+        </div>
+        <button class="mt-4 text-[#004C6D] hover:underline text-md font-bold">Ver toda la actividad</button>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col justify-between">
+        <div>
+          <h2 class="text-xl font-bold mb-4">Estadísticas Rápidas</h2>
+          <div class="space-y-3">
+            <div class="flex justify-between items-center text-lg">
+              <span class="text-gray-700">Total de Capturas:</span>
+              <span class="font-bold text-[#001830]">45</span>
+            </div>
+            <div class="flex justify-between items-center text-lg">
+              <span class="text-gray-700">Especies Registradas:</span>
+              <span class="font-bold text-[#001830]">12</span>
+            </div>
+            <div class="flex justify-between items-center text-lg">
+              <span class="text-gray-700">Participación en Eventos:</span>
+              <span class="font-bold text-[#001830]">3</span>
+            </div>
+          </div>
+        </div>
+        <button class="mt-6 text-[#004C6D] hover:underline text-md font-bold self-start">Ver estadísticas completas</button>
+      </div>
+
+      <div class="lg:col-span-3 bg-white rounded-2xl shadow-md p-6">
+        <h2 class="text-xl font-bold mb-4 text-center">Destacado del Mes: Nueva Función de Anotaciones</h2>
+        <div class="flex flex-col md:flex-row items-center gap-6">
+          
+          <div class="flex-1">
+            <p class="text-gray-700 mb-3">
+              ¡Hemos lanzado una nueva función que te permite añadir anotaciones personalizadas a cada una de tus capturas!
+              Ahora puedes registrar detalles adicionales, observaciones y notas importantes directamente en tu agenda.
+            </p>
+            <p class="text-gray-700">
+              Explora esta y otras mejoras diseñadas para hacer tu experiencia en AquaData aún más completa y útil.
+            </p>
+            <button class="mt-4 bg-[#001830] text-white px-5 py-2 rounded-lg hover:bg-[#326F89] transition-colors duration-300">Descubre las Novedades</button>
+          </div>
+        </div>
+      </div>
+
     </div>
   </main>
 
   <app-footer></app-footer>
 
-  <!-- Modal -->
   <div *ngIf="showModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
     <div class="bg-white rounded-2xl shadow-lg p-6 w-[90%] max-w-md">
       <h2 class="text-xl font-bold mb-4">Editar Perfil</h2>
-      
+
       <form (ngSubmit)="saveChanges()" class="space-y-4">
         <div>
           <label class="block font-semibold mb-1">Nombre</label>
@@ -57,4 +117,3 @@
     </div>
   </div>
 </div>
-

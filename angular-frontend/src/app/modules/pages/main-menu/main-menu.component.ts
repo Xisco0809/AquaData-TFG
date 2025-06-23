@@ -1,11 +1,12 @@
 import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { NavbarComponent } from "../../shared/navbar/navbar.component";
 import { FooterComponent } from "../../shared/footer/footer.component";
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-main-menu',
   standalone: true,
-  imports: [NavbarComponent, FooterComponent],
+  imports: [NavbarComponent, FooterComponent, RouterLink],
   templateUrl: './main-menu.component.html',
   // styleUrl: './main-menu.component.css'
 })

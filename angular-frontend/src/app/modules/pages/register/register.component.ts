@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../Service/auth.service';
-import { Router } from '@angular/router'; 
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -18,6 +18,7 @@ export class RegisterComponent {
   name = '';
   email = '';
   password = '';
+  error = '';
 
   constructor(private auth: AuthService, private router: Router) { }
 
